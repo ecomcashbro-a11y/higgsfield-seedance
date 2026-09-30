@@ -1,26 +1,28 @@
 # Higgsfield Seedance 2.5
 
-TypeScript example using the official Higgsfield SDK and `subscribe` with:
+Python example using the official Higgsfield SDK and `subscribe`.
+
+Configuration:
 
 - model: `bytedance/seedance-2.5/text-to-video`
 - prompt: `A cinematic scene at sunset`
-- duration: 5
-- resolution: 720p
-- aspect ratio: 16:9
+- duration: `5`
+- resolution: `720p`
+- aspect ratio: `16:9`
 
 ## Setup
 
-1. Copy `.env.example` to `.env.local`.
-2. Put your credential in `.env.local`:
+1. Create `.env.local` from `.env.example`.
+2. Put the credential in `.env.local` as:
 
-   `HF_CREDENTIALS=key-id:key-secret`
+   `HF_KEY=key-id:key-secret`
 
 3. Install dependencies:
 
-   `npm install`
+   `python -m pip install -r requirements.txt`
 
 4. Run:
 
-   `npm start`
+   `python main.py`
 
-`.env.local` is gitignored and must never be committed.
+The credential is loaded only at runtime. `.env.local` is ignored by Git and must never be committed.
