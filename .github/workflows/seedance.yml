@@ -27,7 +27,9 @@ jobs:
       - name: Generate video with Higgsfield API
         env:
           HF_KEY: ${{ secrets.HF_KEY }}
+        shell: bash
         run: |
+          set -o pipefail
           test -n "$HF_KEY" || (echo "Missing repository secret HF_KEY" && exit 1)
           python main.py | tee video-url.txt
 
